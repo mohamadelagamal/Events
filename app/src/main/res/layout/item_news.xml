@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:id="@+id/imageAD"
+        android:elevation="8dp"
+        app:riv_corner_radius="14dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/author"
+        app:layout_constraintTop_toBottomOf="@id/imageAD"
+        android:textColor="@color/blue"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/title"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        tools:text=";asdflj111fd aslfsdafsdl;jnj"
+        app:layout_constraintTop_toBottomOf="@id/author"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/dataTime"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="a;sdfjlasdf;jl"
+        android:textColor="@color/blue"/>
+    <ProgressBar
+        style="@android:style/Widget.ProgressBar.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="0dp"
+        app:layout_constraintTop_toTopOf="@id/imageAD"
+        app:layout_constraintBottom_toBottomOf="@id/imageAD"
+        app:layout_constraintStart_toStartOf="@id/imageAD"
+        app:layout_constraintEnd_toEndOf="@id/imageAD"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
