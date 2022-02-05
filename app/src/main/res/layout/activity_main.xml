@@ -5,46 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <TextView
-        android:layout_width="0dp"
-        android:id="@+id/politics"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@color/white"
-        android:textColor="@color/white"
-        tools:text="Politics"
-        android:padding="11dp"
-        android:textSize="24dp"
-        android:gravity="start"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-<com.google.android.material.tabs.TabLayout
-    android:layout_width="match_parent"
-    android:id="@+id/tabs_Layout"
-    android:layout_marginTop="10dp"
-    android:layout_height="wrap_content"
-    app:tabMode="scrollable"
-    app:tabIndicatorHeight="0dp"
-    app:layout_constraintStart_toStartOf="parent"
-    app:tabTextColor="@color/blue"
-    app:tabBackground="@drawable/bacgroung_tab"
-    app:tabSelectedTextColor="@color/white"
-    app:layout_constraintTop_toBottomOf="@id/politics"/>
-    <androidx.recyclerview.widget.RecyclerView
+
+    <FrameLayout
+        android:id="@+id/FrameLayoutHome"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/Recycle_Home"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/tabs_Layout"
+        app:layout_constraintBottom_toTopOf="@id/NavigationHome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:id="@+id/NavigationHome"
+        android:layout_height="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        />
-    <ProgressBar
-        android:id="@+id/ProgressBar"
+        app:elevation="0dp"
+        app:menu="@menu/botton_navigation"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/tabs_Layout"
+        android:id="@+id/FloatingActionButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="25sp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:elevation="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

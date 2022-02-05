@@ -5,13 +5,8 @@
 <!--    <color name="purple_700">#FF3700B3</color>-->
 <!--    <color name="teal_200">#FF03DAC5</color>-->
 <!--    <color name="teal_700">#FF018786</color>-->
-    <color name="blue">#5D9CEC</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="red">#C91C22</color>
-    <color name="pink">#ED1E79</color>
-    <color name="brown_orange">#CF7E48</color>
-    <color name="baby_blue">#003E90</color>
-    <color name="yellow">#F2D352</color>
-
+    <color name="blue">#5D9CEC</color>
+    <color name="blackDark">#060E1E</color>
 </resources>

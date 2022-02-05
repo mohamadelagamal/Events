@@ -1,0 +1,44 @@
+Index: app/src/main/java/Err/One/MainActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/Err/One/MainActivity.kt b/app/src/main/java/Err/One/MainActivity.kt
+--- a/app/src/main/java/Err/One/MainActivity.kt	(date 1643499320925)
++++ b/app/src/main/java/Err/One/MainActivity.kt	(date 1643499320925)
+@@ -10,34 +10,27 @@
+ import com.google.android.material.bottomnavigation.BottomNavigationView
+ import com.google.android.material.floatingactionbutton.FloatingActionButton
+ import com.google.android.material.navigation.NavigationBarView
+-import com.route.todo_c35_sat.FrameDialoge_Add
+ 
+ class MainActivity : AppCompatActivity() {
+     lateinit var MainNavigation:BottomNavigationView
+     lateinit var addButton :FloatingActionButton
+     val Todo_Frame_List=Fragment_List()
+     val Todo_Frame_Setting=Fragment_Setting()
+-    val AddBottonSheet= FrameDialoge_Add()
+     override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_main)
+         IntionlazingItems()
+-       MainNavigation.selectedItemId=R.id.Details_Navigation
+ 
+     }
++
+     private fun IntionlazingItems() {
+         MainNavigation=findViewById(R.id.NavigationHome)
+         addButton=findViewById(R.id.FloatingActionButton)
+         NavigationItems()
+         FloatingFragmentDilago()
+-
+     }
+ 
+     private fun FloatingFragmentDilago() {
+-        addButton.setOnClickListener{
+-
+-            AddBottonSheet.show(supportFragmentManager,"")
+-        }
+ 
+     }
+ 
