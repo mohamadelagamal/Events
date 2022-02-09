@@ -27,7 +27,7 @@
     app:tabIndicatorHeight="0dp"
     app:layout_constraintStart_toStartOf="parent"
     app:tabTextColor="@color/blue"
-    app:tabBackground="@drawable/backgroung_tab"
+    app:tabBackground="@drawable/bacgroung_tab"
     app:tabSelectedTextColor="@color/white"
     app:layout_constraintTop_toBottomOf="@id/politics"/>
     <androidx.recyclerview.widget.RecyclerView
