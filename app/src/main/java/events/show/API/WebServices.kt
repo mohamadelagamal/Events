@@ -12,7 +12,8 @@ interface WebServices {
     @GET("v2/top-headlines/sources")
     fun getSources (
         // look you must write the value right in "" in query parameter
-        @Query ("apikey")apikey:String
+        @Query("apikey") apikey: String,
+        @Query("category") category: String
     ):Call<AllResponse>
     @GET("v2/everything")
     fun getNewsSources(
