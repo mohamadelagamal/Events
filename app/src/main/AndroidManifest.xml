@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="events.show">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -13,10 +14,12 @@
         android:theme="@style/Theme.Events"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".Fragment_Drawble.ui.HomeActivity"
-            android:exported="false"
+            android:name=".UI.HomeActivity"
+            android:exported="true"
             android:label="@string/title_activity_home"
-            android:theme="@style/Theme.Events.NoActionBar" />
+            android:theme="@style/Theme.Events.NoActionBar">
+
+        </activity>
         <activity
             android:name=".UI.Splash_Screen"
             android:exported="true">
@@ -28,7 +31,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>

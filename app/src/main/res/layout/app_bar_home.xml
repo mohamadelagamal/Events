@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    tools:context=".UI.HomeActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:theme="@style/Theme.Events.AppBarOverlay"
         android:background="@drawable/tollbar_bacground"
-        android:theme="@style/Theme.Events.AppBarOverlay">
+        >
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,28 +22,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:id="@+id/menu_button"
+                    android:id="@+id/menuAppbar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/icon_menu_menu"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
-                <TextView
+                    android:layout_marginHorizontal="11dp"/>
+                <ImageView
+                    android:id="@+id/SettingAppBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    android:textSize="24dp"
+                    android:src="@drawable/icon_menu_settings"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:text="Events"/>
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginHorizontal="15dp"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_home" />
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
