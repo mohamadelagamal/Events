@@ -11,4 +11,12 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_navigation_fragment">Navigation_Fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sports">Sports</string>
+    <string name="technology">Technology</string>
+    <string name="business">Business</string>
+    <string name="general">Environment</string>
+    <string name="science">Science</string>
+    <string name="health">Health</string>
 </resources>
