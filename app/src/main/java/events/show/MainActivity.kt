@@ -38,17 +38,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getNewsSources() {
-        API_Manager.getApis().getSources(Constants.apiKey).enqueue(object : Callback<AllResponse>{
-            override fun onFailure(call: Call<AllResponse>, t: Throwable) {
-            Log.e("data",t.localizedMessage)
-            // Long.e("data",t.localizedMessage)
-            }
+        API_Manager.getApis().getSources(Constants.apiKey, "")
+            .enqueue(object : Callback<AllResponse> {
+                override fun onFailure(call: Call<AllResponse>, t: Throwable) {
+                    Log.e("data", t.localizedMessage)
+                    // Long.e("data",t.localizedMessage)
+                }
 
-            override fun onResponse(call: Call<AllResponse>, response: Response<AllResponse>) {
-                prgoreesBar.isVisible=false
-               // Log.e("data",response.body().toString())
-                addSourcesToTablayout(response.body()?.sources)
-            }
+                override fun onResponse(call: Call<AllResponse>, response: Response<AllResponse>) {
+                    prgoreesBar.isVisible = false
+                    // Log.e("data",response.body().toString())
+                    addSourcesToTablayout(response.body()?.sources)
+                }
         })
 
     }
