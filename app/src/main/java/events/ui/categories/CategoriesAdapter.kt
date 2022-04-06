@@ -1,4 +1,4 @@
-package events.show.UI.ui.categories
+package events.ui.categories
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.google.android.material.card.MaterialCardView
 import events.show.R
 

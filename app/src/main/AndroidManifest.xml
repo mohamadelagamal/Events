@@ -14,14 +14,14 @@
         android:theme="@style/Theme.Events"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".UI.HomeActivity"
+            android:name="events.ui.HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"
             android:theme="@style/Theme.Events.NoActionBar">
 
         </activity>
         <activity
-            android:name=".UI.Splash_Screen"
+            android:name=".ui.Splash_Screen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

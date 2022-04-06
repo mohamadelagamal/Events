@@ -1,4 +1,4 @@
-package events.show
+package events.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,12 +7,11 @@ import android.widget.ProgressBar
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
-import events.show.API.API_Manager
-import events.show.UI.News_Adapter
-import events.show.model.AllResponse
-import events.show.model.ArticlesItem
-import events.show.model.ResponseBBCnews
-import events.show.model.SourcesItem
+import events.api.API_Manager
+import events.model.AllResponse
+import events.model.ResponseBBCnews
+import events.model.SourcesItem
+import events.show.R
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         getNewsSources()
     }
-    val adapter=News_Adapter(null)
+    val adapter= News_Adapter(null)
     private fun intioalization() {
         tab_layout=findViewById(R.id.tabs_Layout)
         prgoreesBar=findViewById(R.id.ProgressBar)

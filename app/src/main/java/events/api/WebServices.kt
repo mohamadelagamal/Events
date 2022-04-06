@@ -1,7 +1,7 @@
-package events.show.API
+package events.api
 
-import events.show.model.AllResponse
-import events.show.model.ResponseBBCnews
+import events.model.AllResponse
+import events.model.ResponseBBCnews
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

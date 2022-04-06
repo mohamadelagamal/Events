@@ -1,4 +1,4 @@
-package events.show.UI
+package events.ui
 
 import android.os.Bundle
 import android.view.View
@@ -8,10 +8,10 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import events.show.R
-import events.show.UI.ui.FragmentSettings
-import events.show.UI.ui.categories.Categories
-import events.show.UI.ui.categories.CategoriesFragment
-import events.show.UI.ui.news.NewsFragment
+import events.ui.FragmentSettings
+import events.ui.categories.Categories
+import events.ui.categories.CategoriesFragment
+import events.ui.news.NewsFragment
 
 class HomeActivity : AppCompatActivity() {
         lateinit var drawerButtonMenu:ImageView
@@ -23,7 +23,7 @@ class HomeActivity : AppCompatActivity() {
         lateinit var linearMenu:LinearLayout
 
     val categories_fragment= CategoriesFragment()
-        val settings_fragment=FragmentSettings()
+        val settings_fragment= FragmentSettings()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)

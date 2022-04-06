@@ -1,4 +1,4 @@
-package events.show.model
+package events.model
 
 import com.google.gson.annotations.SerializedName
 

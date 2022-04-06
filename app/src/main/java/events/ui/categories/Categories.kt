@@ -1,4 +1,4 @@
-package events.show.UI.ui.categories
+package events.ui.categories
 
 data class Categories(
     val id:String,

@@ -1,4 +1,4 @@
-package events.show.API
+package events.api
 
 import android.util.Log
 import okhttp3.OkHttpClient

@@ -1,4 +1,4 @@
-package events.show.UI.ui.news
+package events.ui.news
 
 import android.os.Bundle
 import android.util.Log
@@ -10,14 +10,14 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayout
-import events.show.API.API_Manager
-import events.show.Constants
+import events.api.API_Manager
+import events.model.AllResponse
+import events.model.ResponseBBCnews
+import events.model.SourcesItem
 import events.show.R
-import events.show.UI.News_Adapter
-import events.show.UI.ui.categories.Categories
-import events.show.model.AllResponse
-import events.show.model.ResponseBBCnews
-import events.show.model.SourcesItem
+import events.ui.categories.Categories
+import events.ui.Constants
+import events.ui.News_Adapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

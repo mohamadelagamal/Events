@@ -1,4 +1,4 @@
-package events.show.UI
+package events.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -6,8 +6,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import events.model.ArticlesItem
 import events.show.R
-import events.show.model.ArticlesItem
 
 class News_Adapter(var items:List<ArticlesItem?>?) :RecyclerView.Adapter<News_Adapter.ViewHolder>(){
     fun ChangeData(articles: List<ArticlesItem?>?) {

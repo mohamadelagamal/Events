@@ -1,4 +1,4 @@
-package events.show.UI.ui
+package events.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
