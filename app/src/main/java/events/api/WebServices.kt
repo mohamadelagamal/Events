@@ -10,14 +10,16 @@ interface WebServices {
 
 
     @GET("v2/top-headlines/sources")
-    fun getSources (
+    // used coroutines
+    suspend  fun getSources (
         // look you must write the value right in "" in query parameter
         @Query("apikey") apikey: String,
         @Query("category") category: String
-    ):Call<AllResponse>
+    ):AllResponse
     @GET("v2/everything")
-    fun getNewsSources(
+    suspend fun getNewsSources(
         @Query("apiKey") apikey: String,
         @Query ("sources")sources:String
-    ):Call<ResponseBBCnews>
+    ):ResponseBBCnews
+    //.....we delete Call<REsponseBBCnews>
 }
