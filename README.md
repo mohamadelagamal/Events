@@ -14,5 +14,6 @@
 * [Google gson](https://github.com/google/gson) For parsing JSON data
 # Architecture pattern Used
 * [MVVM](https://developer.android.com/jetpack/guide)
+![imageMvvm](https://user-images.githubusercontent.com/86564639/166190272-31dac1e8-1419-48b6-8db5-a3fa96b69f51.png)
 
 
