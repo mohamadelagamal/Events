@@ -4,7 +4,6 @@
 ![githubnews](https://user-images.githubusercontent.com/86564639/162011379-f42193b1-1641-4c2d-9119-8f1bd30fcf8c.png)
 # Used Technology
 * [Kotlin](https://kotlinlang.org/) 
-* [MVVM](https://developer.android.com/jetpack/guide)
 * [Data Binding](https://developer.android.com/topic/libraries/data-binding/) -  Declaratively bind observable data to UI elements.
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Build data objects that notify views when the underlying database changes.
 * [ViewModel ](https://developer.android.com/topic/libraries/architecture/viewmodel) 
