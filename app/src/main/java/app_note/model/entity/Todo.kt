@@ -1,4 +1,4 @@
-package com.route.todo_c35_sat.database.model
+package app_note.model.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

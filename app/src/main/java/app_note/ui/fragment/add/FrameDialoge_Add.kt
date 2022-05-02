@@ -1,7 +1,7 @@
-package com.route.todo_c35_sat
+package app_note.ui.fragment.add
 
-import Err.One.DataBase.clearTime
-import Err.One.R
+import app_note.model.database.clearTime
+import app_note.ui.R
 import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.textfield.TextInputLayout
 import com.route.todo_c35_sat.database.MyDataBase
-import com.route.todo_c35_sat.database.model.Todo
+import app_note.model.entity.Todo
 import java.util.*
 
 class FrameDialoge_Add : BottomSheetDialogFragment() {
@@ -66,7 +66,7 @@ class FrameDialoge_Add : BottomSheetDialogFragment() {
     }
 
     private fun InsertTodo_DataBase(title : String,details:String) {
-        val entity_class=Todo(name =title, details = details, date = calendar.clearTime().time)
+        val entity_class= Todo(name =title, details = details, date = calendar.clearTime().time)
         MyDataBase.getInstance(requireContext().applicationContext)
             .todoDao().addTodo(entity_class)
         Toast.makeText(requireContext(), "Todo added successfully", Toast.LENGTH_LONG)

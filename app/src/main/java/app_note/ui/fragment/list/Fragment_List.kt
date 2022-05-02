@@ -1,40 +1,67 @@
-package Err.One.FragmentHome
+package app_note.ui.fragment.list
 
-import Err.One.DataBase.clearTime
-import Err.One.R
+import app_note.model.database.clearTime
 import android.os.Bundle
-import android.provider.CalendarContract
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import app_note.ui.R
+import app_note.ui.databinding.FragmentListBinding
+import app_note.ui.fragment.adapter.Todo_Recyecler_Adapter_List
 import com.prolificinteractive.materialcalendarview.CalendarDay
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView
 import com.route.todo_c35_sat.database.MyDataBase
 import java.util.*
 
 class Fragment_List: Fragment() {
+
+    lateinit var viewModel:ListViewModel
+    lateinit var viewDataBinding:FragmentListBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_list,container,false)
+    ): View {
+      //  return inflater.inflate(R.layout.fragment_list,container,false)
+        viewDataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_list,container,false)
+        return viewDataBinding.root
     }
+
     lateinit var recyclerView: RecyclerView
-    //make object about calander
+    //make object about calender
     lateinit var calendarView:MaterialCalendarView
-    val adatpter=Todo_Recyecler_Adapter_List(null)
+    val adatpter= Todo_Recyecler_Adapter_List(null)
     override fun onResume() {
         super.onResume()
         getTodoFromDatabase()
     }
+    lateinit var makeDone:ImageView
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialzationItem()
+        //makeDone = requireActivity().findViewById(R.id.make_Done)
+//        makeDone.setOnClickListener {
+//            adatpter.onItemClickListener = object : Todo_Recyecler_Adapter_List.OnItemClick {
+//                override fun onItemclike(pos: Int) {
+//                makeDone.setImageResource(R.drawable.ic_action_name)
+//                                }
+//
+//            }
+//        }
     }
+
 
     var date=Calendar.getInstance()
 

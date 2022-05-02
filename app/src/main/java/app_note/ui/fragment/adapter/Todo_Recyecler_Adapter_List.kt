@@ -1,13 +1,16 @@
-package Err.One.FragmentHome
+package app_note.ui.fragment.adapter
 
-import Err.One.R
+import app_note.ui.R
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.route.todo_c35_sat.database.model.Todo
+import app_note.model.entity.Todo
+import java.lang.Exception
+import java.lang.IllegalArgumentException
 
 class Todo_Recyecler_Adapter_List(var items:MutableList<Todo>?)  : RecyclerView.Adapter<Todo_Recyecler_Adapter_List.viewHolder>() {
 
@@ -32,9 +35,21 @@ class Todo_Recyecler_Adapter_List(var items:MutableList<Todo>?)  : RecyclerView.
         val item = items!!.get(position)
         holder.title.setText(item.name)
         holder.descraption.setText(item.details)
+        if(onItemClickListener!=null){
+            try {
+                holder.makeDone.setOnClickListener{
+                 onItemClickListener!!.onItemclike(position)
+            }
+            }catch (ex:Exception){
+                throw IllegalArgumentException(ex.toString())
+            }
+        }
 
+    }
 
-
+    var onItemClickListener : OnItemClick?=null
+    interface OnItemClick{
+        fun onItemclike(pos:Int)
     }
 
     override fun getItemCount(): Int =items?.size ?:0

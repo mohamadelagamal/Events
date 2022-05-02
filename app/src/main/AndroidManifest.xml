@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="Err.One">
+    package="app_note.ui">
 
     <application
         android:allowBackup="true"
@@ -10,18 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Err_One">
         <activity
-            android:name=".SplashScreen"
+            android:name="app_note.ui.splash.SplashScreen"
             android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="app_note.ui.main.MainActivity"
             android:exported="true">
-
         </activity>
     </application>
 
