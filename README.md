@@ -9,7 +9,10 @@
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata) - Build data objects that notify views when the underlying database changes.
 * [ViewModel ](https://developer.android.com/topic/libraries/architecture/viewmodel) 
 * [Room](https://developer.android.com/training/data-storage/room) - Access your app's SQLite database with in-app objects and compile-time checks.
-* [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) 
+* [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) For managing background threads with simplified code and reducing needs for callbacks.
 * [Retrofit](https://square.github.io/retrofit/)  For sending network requests
 * [Google gson](https://github.com/google/gson) For parsing JSON data
+# Architecture pattern Used
+* [MVVM](https://developer.android.com/jetpack/guide)
+
 
