@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import events.show.R
-import events.ui.HomeActivity
+import events.ui.home.HomeActivity
 
 class Splash_Screen : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

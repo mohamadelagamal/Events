@@ -1,4 +1,4 @@
-package events.ui
+package events.ui.home
 
 import android.os.Bundle
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import events.show.R
-import events.ui.FragmentSettings
+import events.ui.settings.FragmentSettings
 import events.ui.categories.Categories
 import events.ui.categories.CategoriesFragment
 import events.ui.news.NewsFragment

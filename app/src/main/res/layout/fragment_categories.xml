@@ -12,7 +12,7 @@
         android:id="@+id/textUpRecycleview"
         android:textSize="25sp"
         android:text="Pick your category of interest"
-        android:textColor="#000000"
+        android:textColor="@color/blue"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:paddingVertical="15sp"

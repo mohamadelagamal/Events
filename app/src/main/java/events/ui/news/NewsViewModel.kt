@@ -13,9 +13,6 @@ import events.model.SourcesItem
 import events.ui.Constants
 import events.ui.categories.Categories
 import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.lang.Exception
 
 class NewsViewModel : ViewModel() {

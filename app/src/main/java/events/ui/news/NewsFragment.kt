@@ -41,7 +41,7 @@ class NewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-       // return inflater.inflate(R.layout.fragment_news, container, false)
+       // return inflater.inflated(R.layout.fragment_news, container, false)
       viewDataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_news,container,false)
         //... root is the root element inflation
     return viewDataBinding.root
