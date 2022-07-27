@@ -7,12 +7,13 @@ import android.widget.LinearLayout
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import dagger.hilt.android.AndroidEntryPoint
 import events.show.R
 import events.ui.settings.FragmentSettings
 import events.ui.categories.Categories
 import events.ui.categories.CategoriesFragment
 import events.ui.news.NewsFragment
-
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
         lateinit var drawerButtonMenu:ImageView
         lateinit var drawerButtonSettings:ImageView

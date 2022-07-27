@@ -17,6 +17,7 @@ import events.model.SourcesItem
 import events.show.R
 import events.show.databinding.FragmentNewsBinding
 import events.ui.categories.Categories
+import javax.inject.Inject
 
 class NewsFragment : Fragment() {
 
@@ -30,11 +31,11 @@ class NewsFragment : Fragment() {
             return fragment
         }
     }
-
+//    @Inject lateinit var newsViewModel: NewsViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //..... to init viewModel
-        viewModel = ViewModelProvider(this).get(NewsViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(NewsViewModel::class.java)
     }
     override fun onCreateView(
         inflater: LayoutInflater,
