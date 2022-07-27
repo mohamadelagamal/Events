@@ -11,6 +11,9 @@
 * [Kotlin Coroutines](https://developer.android.com/kotlin/coroutines) For managing background threads with simplified code and reducing needs for callbacks.
 * [Retrofit](https://square.github.io/retrofit/)  For sending network requests
 * [Google gson](https://github.com/google/gson) For parsing JSON data
+* [Hilt](https://developer.android.com/training/dependency-injection/hilt-android) Dependency injection with Hilt 
+* [Repository Pattern](https://developer.android.com/codelabs/basic-android-kotlin-training-repository-pattern#0) 
+
 # Architecture pattern Used
 * [MVVM](https://developer.android.com/jetpack/guide)
 ![imageMvvm](https://user-images.githubusercontent.com/86564639/166190272-31dac1e8-1419-48b6-8db5-a3fa96b69f51.png)
