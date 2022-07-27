@@ -1,37 +1,66 @@
 package events.ui.news
 
-import android.util.Log
-import androidx.core.view.isVisible
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import events.api.API_Manager
-import events.model.AllResponse
+import dagger.hilt.android.lifecycle.HiltViewModel
+import events.NetworkHandler
 import events.model.ArticlesItem
-import events.model.ResponseBBCnews
 import events.model.SourcesItem
+import events.repos.news.NewsOnlineDataSource
+import events.repos.news.NewsOnlineDataSourceImpl
+import events.repos.news.NewsRepository
+import events.repos.news.NewsRepositoryImpl
+import events.repos.source.*
+import events.room.MyDataBase
 import events.ui.Constants
 import events.ui.categories.Categories
 import kotlinx.coroutines.launch
 import java.lang.Exception
+import javax.inject.Inject
 
-class NewsViewModel : ViewModel() {
+@HiltViewModel
+class NewsViewModel @Inject constructor(
+    var newsRepository:NewsRepository,
+    var sourcesRepository: SourceRepository
+): ViewModel() {
     //...to change data
     val sourcesLiveData = MutableLiveData<List<SourcesItem?>?>()
     val newsLiveData = MutableLiveData<List<ArticlesItem?>?>()
     val progressVisible = MutableLiveData<Boolean>()
     val messageLiveData = MutableLiveData<String>()
+    // this reposatory
 
+//    lateinit var newsONlineDataSource:NewsOnlineDataSource
+//    lateinit var sourcesOnlineDataSource : SourcesOnlineDataSource
+//    lateinit var sourcesOfflineDataSource:SourcesOfflineDataSource
+//    lateinit var networkHandler: NetworkHandler
+//    init {
+//        newsONlineDataSource = NewsOnlineDataSourceImpl(API_Manager.getApis())
+//        newsRepository = NewsRepositoryImpl(newsONlineDataSource)
+//        sourcesOfflineDataSource = SourcesOfflineDataSourceImpl(MyDataBase.getInstance())
+//        sourcesOnlineDataSource = SourcesOnlineDataSourceImpl(API_Manager.getApis())
+//        sourcesRepository = SourcesRepositoryImpl(sourcesOnlineDataSource,sourcesOfflineDataSource,
+//        // how to check internet status
+//            Constants.networkHandler
+//            )
+//    }
     //... coroutines
     fun getNewsSources(category: Categories) {
         // used coroutines
         viewModelScope.launch {
             try {
-                progressVisible.value = true
-                val sourcesResponse: AllResponse =
-                    API_Manager.getApis().getSources(Constants.apiKey, category = category.id)
+                // use repository
+                progressVisible.value=true
+                val result = sourcesRepository.getSources(category.id)
                 progressVisible.value = false
-                sourcesLiveData.value = sourcesResponse.sources
+                sourcesLiveData.value = result
+
+//                progressVisible.value = true
+//                val sourcesResponse: AllResponse =
+//                    API_Manager.getApis().getSources(Constants.apiKey, category = category.id)
+//                progressVisible.value = false
+//                sourcesLiveData.value = sourcesResponse.sources
             } catch (ex: Exception) {
                 progressVisible.value = false
                 messageLiveData.value = ex.localizedMessage
@@ -63,9 +92,15 @@ class NewsViewModel : ViewModel() {
         viewModelScope.launch {
             progressVisible.value=true
             try {
-                val result =
-                    API_Manager.getApis().getNewsSources(Constants.apiKey, sources = sources.id ?: "")
-                newsLiveData.value = result.articles
+                // use repository
+                progressVisible.value = true
+                val result = newsRepository.getNews(sources.id)
+                progressVisible.value = false
+                newsLiveData.value = result
+
+             //  val result =
+                //     API_Manager.getApis().getNewsSources(Constants.apiKey, sources = sources.id ?: "")
+                //newsLiveData.value = result.articles
                 progressVisible.value=false
             }catch (ex:Exception){
                 messageLiveData.value = ex.localizedMessage
