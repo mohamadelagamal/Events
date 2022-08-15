@@ -3,6 +3,7 @@ package events.repos.source
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import events.NetworkHandler
 import events.api.WebServices
 import events.repos.source.*
@@ -10,15 +11,17 @@ import events.room.MyDataBase
 import javax.inject.Singleton
 
 @Module
-@InstallIn(Singleton::class)
+@InstallIn(SingletonComponent::class)
 object SourcesModule{
 
     @Provides
+    @Singleton
     fun provideOnlineDataSource(webServices: WebServices):SourcesOnlineDataSource{
         //.. return concrete object
         return SourcesOnlineDataSourceImpl(webServices)
     }
     @Provides
+    @Singleton
     // get repository
     fun provideOfflineDataSource(dataBase: MyDataBase):SourcesOfflineDataSource{
         return SourcesOfflineDataSourceImpl(dataBase)

@@ -51,6 +51,7 @@ kapt {
 
 }
 dependencies {
+  //  implementation project(path: ':domain')
     def lifecycle_version = "2.5.0-alpha04"
     implementation platform('com.google.firebase:firebase-bom:29.2.0')
     // ViewModel
