@@ -6,7 +6,7 @@
     <data>
     <variable
         name="item"
-        type="events.model.ArticlesItem" />
+        type="com.example.domain.model.ArticlesItemDTO" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

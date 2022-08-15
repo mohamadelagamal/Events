@@ -4,20 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.RecyclerView
+import com.example.domain.model.ArticlesItemDTO
+import com.example.domain.model.SourcesItemDTO
 import com.google.android.material.tabs.TabLayout
-import events.model.ArticlesItem
-import events.model.SourcesItem
 import events.show.R
 import events.show.databinding.FragmentNewsBinding
 import events.ui.categories.Categories
-import javax.inject.Inject
 
 class NewsFragment : Fragment() {
 
@@ -75,7 +71,7 @@ class NewsFragment : Fragment() {
          })
      }
 
-     fun showNews(newsList: List<ArticlesItem?>?) {
+     fun showNews(newsList: List<ArticlesItemDTO?>?) {
      adapter.changeData(newsList)
      }
 
@@ -87,7 +83,7 @@ class NewsFragment : Fragment() {
         viewDataBinding.RecycleHome.adapter = adapter
     }
 
-    private fun addSourcesToTablayout(sources: List<SourcesItem?>?) {
+    private fun addSourcesToTablayout(sources: List<SourcesItemDTO?>?) {
 
         sources?.forEach {
             val tab = viewDataBinding.tabsLayout.newTab()
@@ -101,12 +97,12 @@ class NewsFragment : Fragment() {
             object : TabLayout.OnTabSelectedListener {
                 override fun onTabReselected(tab: TabLayout.Tab?) {
                     // casting tag to sourceitem
-                    val source = tab?.tag as SourcesItem
+                    val source = tab?.tag as SourcesItemDTO
                     viewModel.getNewsBySources(source)
                 }
 
                 override fun onTabSelected(tab: TabLayout.Tab?) {
-                    val source = tab?.tag as SourcesItem
+                    val source = tab?.tag as SourcesItemDTO
 //                    getNewsBySources(source)
 
                     viewModel.getNewsBySources(source)
