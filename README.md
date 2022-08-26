@@ -17,5 +17,7 @@
 # Architecture pattern Used
 * [MVVM](https://developer.android.com/jetpack/guide)
 ![imageMvvm](https://user-images.githubusercontent.com/86564639/166190272-31dac1e8-1419-48b6-8db5-a3fa96b69f51.png)
+![CleanArchitecture (1)](https://user-images.githubusercontent.com/86564639/186997000-5b9dd004-3a76-404e-8982-3726635a1921.jpg)
+* [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 
 
